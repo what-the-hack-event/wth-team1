@@ -3,23 +3,21 @@ on:
   workflow_dispatch:
 
 
-name: Azure Login
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@main
 
-      # Checkout code
-    - uses: actions/checkout@main
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_SPN }}
 
-      # Log into Azure
-    - uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_SPN }}
-
-      # Deploy ARM template
-    - name: Run ARM deploy
-      uses: azure/arm-deploy@v1
-      with:
-        resourceGroupName: ${{ variable.AZURE_RESOURCE_GROUP_NAME }}
-        template: ./ARM-Templates/container-webapp-template.json
+        # Deploy ARM template
+      - name: Run ARM deploy
+        uses: azure/arm-deploy@v1
+        with:
+          resourceGroupName: ${{ variable.AZURE_RESOURCE_GROUP_NAME }}
+          template: ./ARM-Templates/container-webapp-template.json
