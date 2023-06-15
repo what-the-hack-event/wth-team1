@@ -23,4 +23,4 @@ jobs:
           template: ./ARM-Templates/container-webapp-template.json
           parameters: webAppName=${{ env.targetEnv }}
         env:
-          targetEnv: team1devops-test
+          targetEnv: team1devops-prod
