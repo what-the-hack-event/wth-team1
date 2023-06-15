@@ -1,11 +1,11 @@
 name: First Workflow
-runs-on: ubuntu-latest
 on:
   workflow_dispatch:
 
 
 jobs:
   job1:
+    runs-on: ubuntu-latest
     steps:
       - name: Step 1
         run: |
