@@ -41,8 +41,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Docker login
-      run: docker login $registryName -u ${{secrets.ACR_USERNAME}} -p ${{secrets.ACR_PASSWORD}}
+      run: docker login ${{env.registryName}} -u ${{secrets.ACR_USERNAME}} -p ${{secrets.ACR_PASSWORD}}
     - name: Build the Docker image
-      run: docker build -t $registryName/$repositoryName:$tag --build-arg build_version=$tag $dockerFolderPath
+      run: docker build -t ${{env.registryName}}/${{env.repositoryName}}:${{env.tag}} --build-arg build_version=${{env.tag}} ${{env.dockerFolderPath}}
     - name: Docker Push
-      run: docker push $registryName/$repositoryName:$tag
+      run: docker push ${{env.registryName}}/${{env.repositoryName}}:${{env.tag}}
