@@ -14,11 +14,7 @@ on:
 
 jobs:
   build:
-    env:
-      registryName: team1devopsreg.azurecr.io
-      repositoryName: wth/dotnetcoreapp
-      dockerFolderPath: Application/src/RazorPagesTestSample
-      tag: ${{github.run_number}}
+    
     runs-on: ubuntu-latest
 
     steps:
@@ -35,7 +31,11 @@ jobs:
       run: dotnet test --no-build --verbosity normal ./Application/tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.sln
 
   docker-build-push:
-    
+    env:
+      registryName: team1devopsreg.azurecr.io
+      repositoryName: wth/dotnetcoreapp
+      dockerFolderPath: Application/src/RazorPagesTestSample
+      tag: ${{github.run_number}}
     runs-on: ubuntu-latest
 
     steps:
