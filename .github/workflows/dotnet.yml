@@ -28,4 +28,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj
     - name: Test 
-      run: dotnet test --no-build --verbosity normal Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj
+      run: dotnet test --no-build --verbosity normal Application/tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.csproj
