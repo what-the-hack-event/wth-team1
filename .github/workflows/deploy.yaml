@@ -19,5 +19,5 @@ jobs:
       - name: Run ARM deploy
         uses: azure/arm-deploy@v1
         with:
-          resourceGroupName: ${{ variable.AZURE_RESOURCE_GROUP_NAME }}
+          resourceGroupName: ${{ vars.AZURE_RESOURCE_GROUP_NAME }}
           template: ./ARM-Templates/container-webapp-template.json
