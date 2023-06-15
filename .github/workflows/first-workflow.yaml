@@ -14,3 +14,11 @@ jobs:
       - name: Step 2
         run: |
          echo "Step 2"
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cow!
+        uses: mscoutermarsh/cowsays-action@master
+        with:
+          text: 'sail the ship!'
+          color: 'red'
