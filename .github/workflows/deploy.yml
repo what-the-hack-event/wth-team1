@@ -29,4 +29,4 @@ jobs:
         with:
           subscriptionId: ${{ vars.SUBSCRIPTION_ID }}
           resourceGroupName: ${{ vars.RESOURCEGROUP }}
-          template: ../../InfrastructureAsCode/main.bicep
+          template: ./InfrastructureAsCode/main.bicep
