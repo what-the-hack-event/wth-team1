@@ -14,9 +14,7 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: 9f4d831e-ab93-411f-a844-ed26585cfea9
-          tenant-id: f0380713-9d98-4d52-bbb0-abb7dc56c958
-          subscription-id: 16fbc8d0-52d4-49e2-9d80-887dd122d97e 
+          creds: ${{ secrets.AZURE_SECRET }}
           enable-AzPSSession: true
 
       - name: 'Get resource group with PowerShell action'
