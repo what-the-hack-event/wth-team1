@@ -1,0 +1,16 @@
+
+
+// Use docker image for .NET, notably “mcr.microsoft.com/devcontainers/dotnet:0-6.0” for the hackathon supplied application on .NET 6.0
+// Use the Azure CLI feature to install Bicep
+// The Azure CLI feature is a pre-built feature that installs the Azure CLI and Bicep on the devcontainer
+
+{
+	"name": "C# (.NET)",
+	"image": "mcr.microsoft.com/devcontainers/dotnet:0-6.0",
+	"features": {
+		"ghcr.io/devcontainers/features/azure-cli:1": {
+			"installBicep": true,
+			"version": "latest"
+		}
+	}
+}
