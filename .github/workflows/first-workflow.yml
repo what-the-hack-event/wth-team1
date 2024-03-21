@@ -8,12 +8,10 @@ jobs:
       - name: Step 1
         run: echo "This is step 1"
       - name: Step 2
-        run: echo "This is step 2"
+        run: cowsay "This is step 2"
   job2:
     runs-on: ubuntu-latest
     steps:
-      - name: Cowsay
-        uses: "actions/checkout@v2"
-        with:
-          repository: "actions/cowsay"
-          ref: "v2"
+      - name: Cowsays
+        uses: mscoutermarsh/cowsays-action@v1
+  
