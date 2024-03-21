@@ -1,0 +1,16 @@
+on: 
+    push:
+    workflow_dispatch:
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: echo "This is step 1"
+      - name: Step 2
+        run: echo "This is step 2"
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Cowsay
+        uses: actions/checkout@v2
