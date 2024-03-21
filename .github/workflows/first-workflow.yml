@@ -12,5 +12,8 @@ jobs:
   job2:
     runs-on: ubuntu-latest
     steps:
-      - name: Run Cowsay
-        uses: actions/checkout@v2
+      - name: Cowsay
+        uses: "actions/checkout@v2"
+        with:
+          repository: "actions/cowsay"
+          ref: "v2"
