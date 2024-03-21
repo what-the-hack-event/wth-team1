@@ -23,3 +23,7 @@ jobs:
           inlineScript: |
             Get-AzResourceGroup
           azPSVersion: "latest"
+      - name: Deploy ARM Template
+        uses: azure/arm-deploy@v1
+        with:
+          template: ../../InfrastructureAsCode/main.bicep
