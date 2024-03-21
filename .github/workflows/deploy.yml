@@ -27,6 +27,6 @@ jobs:
       - name: Deploy ARM Template
         uses: azure/arm-deploy@v1
         with:
-          subscriptionId: ${{ variables.SUBSCRIPTION_ID }}
-          resourceGroupName: ${{ variables.RESOURCEGROUP }}
+          subscriptionId: ${{ vars.SUBSCRIPTION_ID }}
+          resourceGroupName: ${{ vars.RESOURCEGROUP }}
           template: ../../InfrastructureAsCode/main.bicep
