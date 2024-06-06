@@ -24,10 +24,10 @@ jobs:
         dotnet-version: '6.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore /workspaces/wth-team1/Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj
+      run: dotnet restore Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj
 
     - name: Build
-      run: dotnet build /workspaces/wth-team1/Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj --no-restore
+      run: dotnet build Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj --no-restore
 
     - name: Test
-      run: dotnet test /workspaces/wth-team1/Application/tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.csproj --no-build --verbosity normal
+      run: dotnet test Application/tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.csproj --no-build --verbosity normal
