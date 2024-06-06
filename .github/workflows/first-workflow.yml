@@ -20,8 +20,6 @@ jobs:
   job2:
     needs: job1
     runs-on: ubuntu-latest
-     steps:
-  - name: My GitHub Action
-    uses: owner/repo@version
-    with:
-      input_name: ${{ env.MY_ENV_VAR }}
+    steps:
+    - name: Echo Action Step
+      run: echo "Hello from job2"
