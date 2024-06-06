@@ -1,7 +1,7 @@
 name: My Workflow
 
 on: 
-  workflow_dispatch:  # Manually trigger the workflow  from the Actions tab
+  workflow_dispatch:
 
 jobs:
   job1:
@@ -17,6 +17,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Cowsay Action Step
-      uses: actions/cowsay@master
-      with:
-        text: "Hello from job2"
+      run: |
+        docker run --rm mplatform/cowsay "Hello from job2"
