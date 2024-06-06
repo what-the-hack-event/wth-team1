@@ -6,8 +6,8 @@ on:
       environment: 
         description: 'Environment to deploy to'
         required: true
-        default: 'prod'
-        
+        default: 'dev'
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
