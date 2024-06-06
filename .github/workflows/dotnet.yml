@@ -30,4 +30,4 @@ jobs:
       run: dotnet build /workspaces/wth-team1/Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj --no-restore
 
     - name: Test
-      run: dotnet test Application/tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.csproj --no-build --verbosity normal
+      run: dotnet test /workspaces/wth-team1/Application/tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.csproj --no-build --verbosity normal
