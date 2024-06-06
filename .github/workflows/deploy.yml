@@ -21,6 +21,6 @@ jobs:
         subscriptionId: ${{ secrets.SUBSCRIPTION_ID }}
         resourceGroupName: ${{ secrets.RESOURCE_GROUP_NAME }}
         templateLocation: "Linked artifact"
-        csmFile: "path/to/your/template.bicep"
+        csmFile: "/workspaces/wth-team1/InfrastructureAsCode/main.bicep"
         # If your Bicep template requires parameters, provide them in a parameters file and uncomment the line below
         # csmParametersFile: "path/to/your/parameters.json"
