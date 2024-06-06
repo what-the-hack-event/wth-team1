@@ -16,6 +16,5 @@ jobs:
     needs: job1
     runs-on: ubuntu-latest
     steps:
-    - name: Cowsay Action Step
-      run: |
-        docker run --rm mplatform/cowsay "Hello from job2"
+    - name: Echo Action Step
+      run: echo "Hello from job2"
