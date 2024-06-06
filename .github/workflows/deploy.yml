@@ -1,0 +1,26 @@
+name: Deploy to Azure
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Deploy Bicep template
+      uses: azure/arm-deploy@v1
+      with:
+        subscriptionId: ${{ secrets.SUBSCRIPTION_ID }}
+        resourceGroupName: ${{ secrets.RESOURCE_GROUP_NAME }}
+        templateLocation: "Linked artifact"
+        csmFile: "path/to/your/template.bicep"
+        # If your Bicep template requires parameters, provide them in a parameters file and uncomment the line below
+        # csmParametersFile: "path/to/your/parameters.json"
