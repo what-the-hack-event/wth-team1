@@ -15,5 +15,6 @@
                 "github.copilot" // GitHub Copilot extension
             ]
         }
-    }
+    },
+     "postCreateCommand": "dotnet restore /workspaces/wth-team1/Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj"
 }
