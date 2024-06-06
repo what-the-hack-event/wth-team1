@@ -20,6 +20,6 @@ jobs:
       with:
         subscriptionId: ${{ secrets.SUBSCRIPTION_ID }}
         resourceGroupName: ${{ secrets.RESOURCE_GROUP_NAME }}
-        templateLocation: "Embedded"
-        csmFile: "/workspaces/wth-team1/InfrastructureAsCode/main.bicep"
-        csmParametersFile: "/workspaces/wth-team1/InfrastructureAsCode/parameter.json"
+        templateLocation: "Embedded"  
+        template: "/workspaces/wth-team1/InfrastructureAsCode/main.bicep"  
+        #csmParametersFile: "/workspaces/wth-team1/InfrastructureAsCode/parameter.json"
