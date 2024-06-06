@@ -1,5 +1,11 @@
 name: .NET Core CI
 
+env:
+  registryName: 'ngv3omz7fdxyewthreg.azurecr.io'
+  repositoryName: 'wth/dotnetcoreapp'
+  dockerFolderPath: './Application/src/RazorPagesTestSample'
+  tag: ${{ github.run_number }}
+
 on:
   push:
     paths:
