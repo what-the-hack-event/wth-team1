@@ -5,9 +5,6 @@ on:
   issues:
     types: [opened]
 
-env:
-  MY_ENV_VAR: "This is my environment variable"
-
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -15,7 +12,7 @@ jobs:
     - name: Step 1
       run: echo "This is step 1"
     - name: Step 2
-      run: echo ${{ env.MY_ENV_VAR }}
+      run: echo "This is step 2"
 
   job2:
     needs: job1
