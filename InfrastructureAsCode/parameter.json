@@ -1,0 +1,11 @@
+{
+    "parameters": {
+      "parameter1": {
+        "csmFile": "./InfrastructureAsCode/main.bicep"
+      },
+      "parameter2": {
+        "value": "value2"
+      }
+
+    }
+  }

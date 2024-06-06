@@ -21,6 +21,5 @@ jobs:
         subscriptionId: ${{ secrets.SUBSCRIPTION_ID }}
         resourceGroupName: ${{ secrets.RESOURCE_GROUP_NAME }}
         templateLocation: "Embedded"
-        csmFile: "https://github.com/what-the-hack-event/wth-team1/blob/dd5d776b31363f1404a61416b227a361ee7d382f/InfrastructureAsCode/main.bicep"
-        # If your Bicep template requires parameters, provide them in a parameters file and uncomment the line below
-        # csmParametersFile: "./path/to/your/parameters.json"
+        csmFile: "./InfrastructureAsCode/main.bicep"
+        csmParametersFile: "./parameter.json"
