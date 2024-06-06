@@ -1,0 +1,33 @@
+name: .NET Core CI
+
+on:
+  push:
+    paths:
+      - 'Application/**'
+    branches: [ master ]
+  pull_request:
+    paths:
+      - 'Application/**'
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore /workspaces/wth-team1/Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj
+
+    - name: Build
+      run: dotnet build /workspaces/wth-team1/Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj --no-restore
+
+    - name: Test
+      run: dotnet test Application/tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.csproj --no-build --verbosity normal
